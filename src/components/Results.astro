@@ -1,0 +1,98 @@
+---
+const stats = [
+  { value: "+50", label: "Proyectos entregados" },
+  { value: "8", label: "Paises con clientes" },
+  { value: "+6", label: "Anos de experiencia" },
+  { value: "99.9%", label: "Uptime en produccion" }
+];
+---
+
+<section class="results">
+  <div class="results-bg"></div>
+  <div class="container">
+    <div class="section-header">
+      <span class="label">Impacto</span>
+      <h2>Numeros que <span class="gradient-text">respaldan</span></h2>
+    </div>
+    <div class="results-grid">
+      {stats.map((s) => (
+        <div class="result-item">
+          <span class="result-value">{s.value}</span>
+          <span class="result-label">{s.label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .results {
+    padding: 7rem 0;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-alt);
+  }
+
+  .results-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(6,182,212,0.08), transparent 70%);
+    pointer-events: none;
+  }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .result-item {
+    padding: 2.5rem 1.5rem;
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+
+  .result-item:hover {
+    border-color: rgba(6, 182, 212, 0.2);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .result-value {
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 700;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+  }
+
+  .result-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 768px) {
+    .results-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .results-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+</style>

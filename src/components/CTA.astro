@@ -1,0 +1,120 @@
+---
+---
+
+<section class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="cta-particles">
+    <div class="particle p1"></div>
+    <div class="particle p2"></div>
+    <div class="particle p3"></div>
+  </div>
+  <div class="container">
+    <div class="cta-content">
+      <h2>Tienes un proyecto en mente?</h2>
+      <p>
+        Agenda una llamada gratuita de 30 minutos. Analizamos tu caso,
+        te propongo soluciones y te doy un presupuesto sin compromiso.
+      </p>
+      <div class="cta-buttons">
+        <a href="/#contacto" class="btn btn-white">Empecemos a trabajar &rarr;</a>
+        <a href="https://github.com/darwinva97" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Ver mi GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-section {
+    padding: 7rem 0;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #06b6d4, #7c3aed);
+  }
+
+  .cta-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1), transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(255,255,255,0.05), transparent 40%);
+    pointer-events: none;
+  }
+
+  .cta-particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+  }
+
+  .p1 {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    right: -50px;
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .p2 {
+    width: 150px;
+    height: 150px;
+    bottom: -50px;
+    left: 10%;
+    animation: float 10s ease-in-out infinite reverse;
+  }
+
+  .p3 {
+    width: 80px;
+    height: 80px;
+    top: 30%;
+    left: 60%;
+    animation: float 6s ease-in-out infinite 2s;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .cta-content {
+    position: relative;
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto;
+    color: #fff;
+  }
+
+  .cta-content h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+  }
+
+  .cta-content p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255,255,255,0.4);
+  }
+
+  .btn-outline:hover {
+    border-color: #fff;
+    background: rgba(255,255,255,0.1);
+  }
+</style>

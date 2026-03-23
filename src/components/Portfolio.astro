@@ -1,0 +1,326 @@
+---
+const filters = ["Todos", "Web", "E-commerce", "LMS", "Software"];
+
+const projects = [
+  {
+    title: "ECLA Abogados",
+    type: "Sitio Corporativo",
+    category: "Web",
+    result: "Estudio legal premium en Lima",
+    url: "https://ecla.pe/",
+    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&h=400&fit=crop"
+  },
+  {
+    title: "Omega Store",
+    type: "E-commerce",
+    category: "E-commerce",
+    result: "Tienda online multifamilia",
+    url: "https://omega.darwinva.com/",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop"
+  },
+  {
+    title: "W Capital Tech",
+    type: "Plataforma SaaS",
+    category: "Software",
+    result: "Fintech B2B en Latam",
+    url: "https://www.wcapitaltech.com/",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop"
+  },
+  {
+    title: "Campus MKT Sideral",
+    type: "LMS / Plataforma",
+    category: "LMS",
+    result: "Academia de marketing online",
+    url: "https://campus.mktsideral.com/",
+    image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&h=400&fit=crop"
+  },
+  {
+    title: "N&A Construcciones",
+    type: "Sitio Corporativo",
+    category: "Web",
+    result: "Empresa de ingenieria civil",
+    url: "https://www.naconstrucciones.com/",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop"
+  },
+  {
+    title: "Tecno Ventas",
+    type: "E-commerce",
+    category: "E-commerce",
+    result: "Electronica & tecnologia",
+    url: "https://tecnventas.com/",
+    image: "https://images.unsplash.com/photo-1468495244123-6c6c332eeece?w=600&h=400&fit=crop"
+  },
+  {
+    title: "DyC Contadores",
+    type: "Sitio Corporativo",
+    category: "Web",
+    result: "Estudio contable en Lima",
+    url: "https://dyccontadores.com/",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop"
+  },
+  {
+    title: "Habitos Group",
+    type: "Sitio Corporativo",
+    category: "Web",
+    result: "Consultora de negocios",
+    url: "https://habitosgroup.com/",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop"
+  },
+  {
+    title: "Toni-C Richardson",
+    type: "E-commerce Internacional",
+    category: "E-commerce",
+    result: "Moda & lifestyle en Rumania",
+    url: "https://toni-crichardson.ro/",
+    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop"
+  },
+  {
+    title: "Universidad Ame",
+    type: "Portal Educativo",
+    category: "LMS",
+    result: "Universidad en Mexico",
+    url: "https://ame.edu.mx/sitio",
+    image: "https://images.unsplash.com/photo-1562774053-701939374585?w=600&h=400&fit=crop"
+  },
+  {
+    title: "Alpamayo Arqueologos",
+    type: "Sitio Corporativo",
+    category: "Web",
+    result: "Consultora de arqueologia",
+    url: "https://alpamayoarqueologosasesores.com/",
+    image: "https://images.unsplash.com/photo-1461360370896-922624d12aa1?w=600&h=400&fit=crop"
+  },
+  {
+    title: "FMA Tech",
+    type: "Plataforma Tech",
+    category: "Software",
+    result: "Soluciones tecnologicas",
+    url: "https://www.fma-tech.com/",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop"
+  },
+  {
+    title: "Damma Imagen",
+    type: "Sitio Creativo",
+    category: "Web",
+    result: "Agencia de imagen",
+    url: "https://dammaimagen.com/",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=400&fit=crop"
+  },
+  {
+    title: "MAV Security 105",
+    type: "Sitio Corporativo",
+    category: "Web",
+    result: "Empresa de seguridad",
+    url: "https://mavsecurity105.com/",
+    image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=600&h=400&fit=crop"
+  },
+  {
+    title: "IMEX Chile",
+    type: "Sitio Corporativo",
+    category: "Web",
+    result: "Ingenieria en Chile",
+    url: "https://imexing.cl/",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop"
+  },
+  {
+    title: "Ciccios Pasta",
+    type: "Sitio Restaurante",
+    category: "Web",
+    result: "Restaurante italiano en Lima",
+    url: "https://cicciospasta.com/",
+    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&h=400&fit=crop"
+  },
+  {
+    title: "Ficafe",
+    type: "Sitio Corporativo",
+    category: "Web",
+    result: "Feria de cafe en Peru",
+    url: "https://ficafe.com.pe/",
+    image: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600&h=400&fit=crop"
+  },
+  {
+    title: "Orginor Natural",
+    type: "E-commerce",
+    category: "E-commerce",
+    result: "Productos naturales",
+    url: "https://orginornatural.com/",
+    image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&h=400&fit=crop"
+  }
+];
+---
+
+<section class="section" id="portafolio">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">Portafolio</span>
+      <h2>Proyectos que <span class="gradient-text">generan impacto</span></h2>
+      <p>+50 proyectos entregados para clientes en Peru, Mexico, Chile, Rumania y mas. Aqui algunos destacados.</p>
+    </div>
+    <div class="filters">
+      {filters.map((f, i) => (
+        <button class:list={["filter-btn", { active: i === 0 }]} data-filter={f}>{f}</button>
+      ))}
+    </div>
+    <div class="portfolio-grid" id="portfolioGrid">
+      {projects.map((p) => (
+        <div class="portfolio-card" data-category={p.category}>
+          <div class="portfolio-img">
+            <img src={p.image} alt={p.title} loading="lazy" />
+            <div class="portfolio-overlay">
+              <a href={p.url} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Visitar sitio &rarr;</a>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <span class="portfolio-type">{p.type}</span>
+            <h3>{p.title}</h3>
+            <p class="portfolio-result">{p.result}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.portfolio-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.getAttribute('data-filter');
+
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (filter === 'Todos' || cat === filter) {
+          (card as HTMLElement).style.display = 'block';
+        } else {
+          (card as HTMLElement).style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .filters {
+    display: flex;
+    justify-content: center;
+    gap: 0.625rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    border: 1px solid var(--border);
+    background: transparent;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.825rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .filter-btn:hover, .filter-btn.active {
+    background: var(--gradient);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+  }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .portfolio-card {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: all 0.4s;
+    background: var(--bg-card);
+  }
+
+  .portfolio-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-6px);
+    border-color: rgba(6, 182, 212, 0.2);
+  }
+
+  .portfolio-img {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .portfolio-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s;
+  }
+
+  .portfolio-card:hover .portfolio-img img {
+    transform: scale(1.08);
+  }
+
+  .portfolio-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(6,182,212,0.85), rgba(124,58,237,0.85));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .portfolio-card:hover .portfolio-overlay {
+    opacity: 1;
+  }
+
+  .btn-sm {
+    padding: 0.625rem 1.5rem;
+    font-size: 0.825rem;
+  }
+
+  .portfolio-info {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .portfolio-type {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-1);
+  }
+
+  .portfolio-info h3 {
+    margin: 0.25rem 0 0.375rem;
+    font-size: 1.05rem;
+  }
+
+  .portfolio-result {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  @media (max-width: 968px) {
+    .portfolio-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .portfolio-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

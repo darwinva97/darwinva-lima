@@ -1,0 +1,126 @@
+---
+const steps = [
+  {
+    number: "01",
+    title: "Descubrimiento",
+    desc: "Entiendo tu negocio, objetivos y desafios. Analizo tu mercado, competencia y oportunidades digitales."
+  },
+  {
+    number: "02",
+    title: "Estrategia & Diseno",
+    desc: "Diseno la arquitectura de la solucion, wireframes y el plan tecnico con cronograma y entregables claros."
+  },
+  {
+    number: "03",
+    title: "Desarrollo & Automatizacion",
+    desc: "Construyo la solucion con tecnologias modernas, integro automatizaciones y configuro la infraestructura."
+  },
+  {
+    number: "04",
+    title: "Testing & Deploy",
+    desc: "Pruebas exhaustivas, optimizacion de performance y despliegue en produccion con cero downtime."
+  },
+  {
+    number: "05",
+    title: "Soporte & Crecimiento",
+    desc: "Monitoreo continuo, actualizaciones y optimizacion basada en datos reales de tu negocio."
+  }
+];
+---
+
+<section class="section" id="proceso">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">Mi Proceso</span>
+      <h2>De la idea al <span class="gradient-text">producto</span></h2>
+      <p>Un proceso estructurado que garantiza resultados predecibles y de alta calidad.</p>
+    </div>
+    <div class="process-timeline">
+      {steps.map((step, i) => (
+        <div class="process-step">
+          <div class="step-marker">
+            <span class="step-number">{step.number}</span>
+            {i < steps.length - 1 && <div class="step-line"></div>}
+          </div>
+          <div class="step-content">
+            <h3>{step.title}</h3>
+            <p>{step.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .process-timeline {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .process-step {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .step-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step-number {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #fff;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.3);
+  }
+
+  .step-line {
+    width: 2px;
+    flex: 1;
+    background: linear-gradient(180deg, rgba(6,182,212,0.4), rgba(124,58,237,0.1));
+    min-height: 50px;
+  }
+
+  .step-content {
+    padding-bottom: 3rem;
+    padding-top: 0.5rem;
+  }
+
+  .step-content h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .step-content p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 640px) {
+    .process-step {
+      gap: 1.25rem;
+    }
+    .step-number {
+      width: 44px;
+      height: 44px;
+      font-size: 0.85rem;
+    }
+  }
+</style>

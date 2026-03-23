@@ -1,0 +1,144 @@
+---
+const categories = [
+  {
+    title: "Frontend",
+    techs: [
+      { name: "React / Next.js", level: 95 },
+      { name: "Astro", level: 90 },
+      { name: "TypeScript", level: 95 },
+      { name: "Tailwind CSS", level: 90 }
+    ]
+  },
+  {
+    title: "Backend",
+    techs: [
+      { name: "Node.js", level: 95 },
+      { name: "Python", level: 85 },
+      { name: "PostgreSQL", level: 85 },
+      { name: "MongoDB", level: 90 }
+    ]
+  },
+  {
+    title: "Cloud & DevOps",
+    techs: [
+      { name: "AWS (Lambda, EC2, S3)", level: 90 },
+      { name: "Docker & Kubernetes", level: 85 },
+      { name: "Terraform", level: 80 },
+      { name: "CI/CD Pipelines", level: 90 }
+    ]
+  },
+  {
+    title: "Herramientas",
+    techs: [
+      { name: "Git & GitHub", level: 95 },
+      { name: "Shopify / WordPress", level: 85 },
+      { name: "Linux Servers", level: 88 },
+      { name: "IA & Automatizaciones", level: 85 }
+    ]
+  }
+];
+---
+
+<section class="section" id="tecnologias">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">Stack Tecnologico</span>
+      <h2>Tecnologias que <span class="gradient-text">domino</span></h2>
+      <p>Herramientas modernas y probadas en produccion para cada capa de tu proyecto.</p>
+    </div>
+    <div class="tech-grid">
+      {categories.map((cat) => (
+        <div class="tech-card card">
+          <h3 class="tech-cat-title">{cat.title}</h3>
+          <div class="tech-list">
+            {cat.techs.map((t) => (
+              <div class="tech-item">
+                <div class="tech-info">
+                  <span class="tech-name">{t.name}</span>
+                  <span class="tech-level">{t.level}%</span>
+                </div>
+                <div class="tech-bar">
+                  <div class="tech-bar-fill" style={`width: ${t.level}%`}></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .tech-card {
+    padding: 2rem;
+  }
+
+  .tech-cat-title {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .tech-cat-title::before {
+    content: '';
+    width: 3px;
+    height: 20px;
+    background: var(--gradient);
+    border-radius: 2px;
+  }
+
+  .tech-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .tech-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.375rem;
+  }
+
+  .tech-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .tech-level {
+    font-size: 0.75rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    color: var(--accent-1);
+  }
+
+  .tech-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .tech-bar-fill {
+    height: 100%;
+    background: var(--gradient);
+    border-radius: 4px;
+    transition: width 1s ease-out;
+  }
+
+  @media (max-width: 640px) {
+    .tech-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
